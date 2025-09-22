@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduBuddy</title>
+
+  <!-- Your design CSS (user uploaded) -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Optional: any icons or fonts you used in your uploaded design -->
+</head>
+<body>
+
+  <!-- NAVBAR (keeps the exact labels you requested) -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="brand">
+        <a href="{% url 'home' %}">EduBuddy</a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'student_profile' %}">Student Profile</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropbtn">SUBJECTS ▾</a>
+              <div class="dropdown-content">
+                <a href="{% url 'flashcards' %}">Flashcards</a>
+                <a href="{% url 'quizzes' %}">Quizzes</a>
+                <a href="{% url 'backlog' %}">Backlog Record</a>
+                <a href="{% url 'performance' %}">Performance Tracker</a>
+              </div>
+            </li>
+
+            <li><a href="{% url 'library' %}">STUDENT LIBRARY</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT (your uploaded landing page will render here) -->
+  <main id="content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- include any small JS if your design expects it -->
+  <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

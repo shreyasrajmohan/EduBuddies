@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduBuddy - Personalized Learning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">EduBuddy</div>
+    <nav>
+      <!-- Sign In button -->
+<div class="buttons">
+  {% if user.is_authenticated %}
+      <!-- User is logged in -->
+      <a href="/" class="btn btn-success">Go to Dashboard</a>
+      <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+  {% else %}
+      <!-- User is not logged in -->
+      <a href="{% url 'login' %}" class="btn btn-outline-primary">Sign In</a>
+      <a href="{% url 'signup' %}" class="btn btn-primary">Get Started</a>
+
+  {% endif %}
+</div>
+    </nav>
+  </header>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h4>REVOLUTIONIZE</h4>
+    <h1><span>PERSONALIZED LEARNING</span> WITH AI</h1>
+    <p>
+      EduBuddy dismantles the one-size-fits-all approach to education. Get personalized materials, intelligent assessments and AI-powered doubt resolution tailored to your unique learning journey.
+    </p>
+    <div class="hero-buttons">
+      <div class="hero-buttons">
+  <a href="{% url 'login' %}" class="btn btn-primary">Start Learning Free</a>
+  <button class="btn btn-outline">Watch Demo</button>
+</div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem">
+    <h2>THE PROBLEM WE SOLVE</h2>
+    <p>
+      Students learn at different paces and have unique doubts that often goes unaddressed in traditional educational system
+    </p>
+    <div class="problem-cards">
+      <div class="card">
+        <span class="icon">👤</span>
+        <h3>One-size-fits-all approach</h3>
+        <p>Traditional classroom can’t adapt to individual learning speed and style</p>
+      </div>
+      <div class="card">
+        <span class="icon">👥</span>
+        <h3>Limited Individual Attention</h3>
+        <p>Teachers can’t provide personalized help to every student in large classes</p>
+      </div>
+      <div class="card">
+        <span class="icon">❓</span>
+        <h3>Unaddressed Doubts</h3>
+        <p>Students hesitate to ask questions, leaving knowledge gaps unfulfilled</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="solution">
+    <h3>EduBuddy’s Solution</h3>
+    <p>AI powered personalized learning that adapts to each student’s unique learning journey, providing instant support and customised content</p>
+  </section>
+
+  <!-- How it Works -->
+  <section class="how">
+    <h3>How EduBuddy Works</h3>
+    <div class="steps">
+      <div class="step"><span class="icon">📝</span><h4>1. Enter Your Topic</h4><p>Input any topic you want to learn, and let AI create a plan.</p></div>
+      <div class="step"><span class="icon">⚡</span><h4>2. AI Generates Content</h4><p>Curated lessons, flashcards and quizzes tailored to your goals.</p></div>
+      <div class="step"><span class="icon">🧠</span><h4>3. Smart Assessment</h4><p>AI adapts quizzes to your difficulty level and reinforces weak areas.</p></div>
+      <div class="step"><span class="icon">📊</span><h4>4. Track Progress</h4><p>Monitor proficiency, time spent, and progress across subjects.</p></div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="why">
+    <h2>WHY CHOOSE EduBuddy?</h2>
+    <div class="features">
+      <div class="feature"><span class="icon">📚</span><h4>Personalized Learning Material</h4><p>AI generated interactive flashcards, and dynamic question banks.</p></div>
+      <div class="feature"><span class="icon">📝</span><h4>Intelligent Assessment</h4><p>Smart quizzes adapt to performance and reinforce concepts.</p></div>
+      <div class="feature"><span class="icon">📈</span><h4>Visual Progress Tracker</h4><p>Learning graphs with insights on time and performance.</p></div>
+      <div class="feature"><span class="icon">💬</span><h4>24/7 Doubt Support</h4><p>AI tutor answers questions instantly in natural language.</p></div>
+      <div class="feature"><span class="icon">🎓</span><h4>All Grades & Discipline</h4><p>From math to competitive exams, EduBuddy adapts to learners.</p></div>
+      <div class="feature"><span class="icon">🧩</span><h4>Memory Optimization</h4><p>Combat forgetting curve with timed reviews & reinforcement.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Ready to Transform Your Learning?</h2>
+    <p>Join thousands of students who’ve discovered the power of personalized AI education. Start your journey today—no credit card required.</p>
+    <button class="btn btn-light">Watch Demo</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-columns">
+      <div>
+        <h4>Product</h4>
+        <ul><li>Features</li><li>How it works</li><li>Pricing</li></ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul><li>Help center</li><li>Contact us</li><li>Community</li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li>About</li><li>Blog</li><li>Career</li></ul>
+      </div>
+    </div>
+    <p class="copyright">© EduBuddy - All rights reserved.</p>
+  </footer>
+</body>
+</html>

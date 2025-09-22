@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Student Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#4F46E5',
+                        'brand-blue-light': '#E0E7FF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo and Brand -->
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-brand-blue rounded-md flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-semibold text-gray-900">EduBuddy</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex items-center space-x-8">
+                <button class="flex items-center space-x-2 px-4 py-2 bg-brand-blue-light text-brand-blue rounded-lg font-medium">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                    </svg>
+                    <span>Student Profile</span>
+                </button>
+                <button class="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-900">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Subjects</span>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <button class="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-900">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M7 4V2a1 1 0 011-1h4a1 1 0 011 1v2h4a1 1 0 110 2h-1v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6H3a1 1 0 110-2h4z"/>
+                    </svg>
+                    <span>Personalised Library</span>
+                </button>
+            </nav>
+
+<script> window.chtlConfig = { chatbotId: "9777577484" } </script>
+<script async data-id="9777577484" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+
+            <!-- Right Icons -->
+            <div class="flex items-center space-x-4">
+                <button class="p-2 text-gray-600 hover:text-gray-900">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/>
+                    </svg>
+                </button>
+                <button class="p-2 text-gray-600 hover:text-gray-900">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-8">
+        <!-- Profile Header -->
+        <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+            <div class="flex items-center space-x-6">
+                <div class="w-20 h-20 bg-brand-blue rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-1">Sarah Chen</h1>
+                    <p class="text-lg text-gray-600 mb-1">Computer Science Student</p>
+                    <p class="text-sm text-gray-500">Student ID: CS2025001</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Academic Info -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-6">Academic Info</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Current GPA:</span>
+                        <span class="font-semibold text-gray-900">3.8</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Year:</span>
+                        <span class="font-semibold text-gray-900">3rd Year</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Credits:</span>
+                        <span class="font-semibold text-gray-900">78/120</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-6">Contact Info</h2>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-gray-600 block mb-1">Email:</span>
+                        <span class="font-medium text-gray-900">sarah.chen@university.edu</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-600 block mb-1">Phone:</span>
+                        <span class="font-medium text-gray-900">+1 (555) 123-4567</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mt-8">
+            <h2 class="text-xl font-semibold text-gray-900 mb-6">Quick Stats</h2>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Study Hours:</span>
+                    <span class="font-semibold text-green-600">24h this week</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Assignments:</span>
+                    <span class="font-semibold text-orange-600">5 pending</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Achievement:</span>
+                    <span class="font-semibold text-purple-600">Dean's List</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

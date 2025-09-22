@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+{% block content %}
+<div class="container mt-2">
+  <h2>📚 Student Library</h2>
+  <form method="post" class="row g-2 mb-3">
+    {% csrf_token %}
+    <div class="col-md-5">{{ form.title }}</div>
+    <div class="col-md-5">{{ form.url }}</div>
+    <div class="col-md-2"><button class="btn btn-success w-100" type="submit">Add</button></div>
+  </form>
+
+  {% if notes %}
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr><th>Title</th><th>Link</th><th>Added</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      {% for note in notes %}
+      <tr>
+        <td>{{ note.title }}</td>
+        <td><a href="{{ note.url }}" target="_blank">{{ note.url }}</a></td>
+        <td>{{ note.created_at|date:"M d, Y H:i" }}</td>
+        <td><a href="{% url 'delete_note' note.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No notes yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
