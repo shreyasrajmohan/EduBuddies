@@ -2,62 +2,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sign Up Page</title>
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
-  <div class="container">
-    <h1>Sign Up</h1>
-    <form method="post" action="{% url 'signup' %}">
-      {% csrf_token %}
-      <!-- Account Info -->
-      <h2>Account Info</h2>
-      <label for="email">Email ID</label>
-      <input type="email" id="email" name="email" required>
+    <div class="container">
+        <h1>✨ Create Your Account</h1>
+        <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
+            <h2>Account Info</h2>
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="email" name="email" required>
+            </div>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" required>
+            </div>
 
-      <label for="confirm-password">Confirm Password</label>
-      <input type="password" id="confirm-password" name="confirm_password" required>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
 
-      <!-- Personal Details -->
-      <h2>Details</h2>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" required>
+            </div>
 
-      <label for="age">Age</label>
-      <input type="number" id="age" name="age" required>
+            <h2>Details</h2>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="full_name" required>
+            </div>
 
-      <label for="class">Class</label>
-      <input type="text" id="class" name="class" required>
+            <div class="form-inline">
+                <div>
+                    <label>Age</label>
+                    <input type="number" name="age" required>
+                </div>
+                <div>
+                    <label>Class</label>
+                    <input type="text" name="class" required>
+                </div>
+            </div>
 
-      <label>Five Subjects You Wish to Study</label>
-      <div class="subjects">
-        <input type="text" name="subject1" placeholder="Subject 1" required>
-        <input type="text" name="subject2" placeholder="Subject 2" required>
-        <input type="text" name="subject3" placeholder="Subject 3" required>
-        <input type="text" name="subject4" placeholder="Subject 4" required>
-        <input type="text" name="subject5" placeholder="Subject 5" required>
-      </div>
+            <div class="form-group">
+                <label>Five Subjects You Wish to Study</label>
+                <div class="subjects">
+                    <input type="text" name="subject1" placeholder="Subject 1">
+                    <input type="text" name="subject2" placeholder="Subject 2">
+                    <input type="text" name="subject3" placeholder="Subject 3">
+                    <input type="text" name="subject4" placeholder="Subject 4">
+                    <input type="text" name="subject5" placeholder="Subject 5">
+                </div>
+            </div>
 
-      <!-- Academic Info -->
-      <h2>Academic Info</h2>
-      <label for="gpa">Current GPA</label>
-      <input type="text" id="gpa" name="gpa" required>
+            <h2>Academic Info</h2>
+            <div class="form-inline">
+                <div>
+                    <label>Current GPA</label>
+                    <input type="text" name="gpa">
+                </div>
+                <div>
+                    <label>Year/Grade</label>
+                    <input type="text" name="year">
+                </div>
+                <div>
+                    <label>Credits</label>
+                    <input type="number" name="credits">
+                </div>
+            </div>
 
-      <label for="year">Year/Grade</label>
-      <input type="text" id="year" name="year" required>
-
-      <label for="credit">Credits</label>
-      <input type="number" id="credit" name="credit" required>
-
-      <button type="submit" class="submit-btn">Sign Up</button>
-    </form>
-  </div>
+            <button type="submit" class="btn">🚀 Sign Up</button>
+        </form>
+    </div>
 </body>
 </html>

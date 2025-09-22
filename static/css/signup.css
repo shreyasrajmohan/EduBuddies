@@ -1,0 +1,127 @@
+/* Background with gradient */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container box */
+.container {
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+/* Form inputs */
+.form-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0,123,255,0.4);
+}
+
+/* Inline fields */
+.form-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.form-inline div {
+    flex: 1;                /* Equal space for each */
+    display: flex;
+    flex-direction: column; /* Label above input */
+}
+
+.form-inline input {
+    width: 100%;            /* Stretch input to fit inside */
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+
+.form-inline div {
+    flex: 1;
+}
+
+/* Subjects styling */
+.subjects input {
+    margin: 6px 0;
+    padding: 10px;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
