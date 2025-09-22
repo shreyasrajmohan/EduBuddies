@@ -243,3 +243,86 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, "index.html")   # make sure index.html is inside templates/
+
+def student_dashboard(request):
+    user_data = {
+        "full_name": request.user.full_name,
+        "email": request.user.email,
+        "phone_number": request.user.phone_number,
+        "age": request.user.age,
+        "class_name": request.user.class_name,
+        "subject1": request.user.subject1,
+        "subject2": request.user.subject2,
+        "subject3": request.user.subject3,
+        "subject4": request.user.subject4,
+        "subject5": request.user.subject5,
+        "gpa": request.user.gpa,
+        "year": request.user.year,
+        "credits": request.user.credits,
+    }
+    return render(request, "student_dashboard.html", {"user": user_data})
+
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from .models import UserProfile
+
+@login_required
+def student_dashboard(request):
+    profile = UserProfile.objects.get(user=request.user)
+    return render(request, "student_dashboard.html", {
+        "user": request.user,
+        "profile": profile
+    })
+
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from .models import UserProfile
+
+@login_required
+def student_dashboard(request):
+    profile, created = UserProfile.objects.get_or_create(user=request.user)
+    return render(request, "student_dashboard.html", {
+        "user": request.user,
+        "profile": profile
+    })
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from .models import UserProfile
+
+def signup_view(request):
+    if request.method == "POST":
+        email = request.POST["email"]
+        password = request.POST["password"]
+        first_name = request.POST.get("first_name", "")
+        last_name = request.POST.get("last_name", "")
+
+        user = User.objects.create_user(
+            username=email,
+            email=email,
+            password=password,
+            first_name=first_name,
+            last_name=last_name
+        )
+
+        # Create UserProfile from form values
+        UserProfile.objects.create(
+            user=user,
+            phone_number=request.POST.get("phone_number"),
+            age=request.POST.get("age"),
+            class_name=request.POST.get("class_name"),
+            subject1=request.POST.get("subject1"),
+            subject2=request.POST.get("subject2"),
+            subject3=request.POST.get("subject3"),
+            subject4=request.POST.get("subject4"),
+            subject5=request.POST.get("subject5"),
+            gpa=request.POST.get("gpa"),
+            year=request.POST.get("year"),
+            credits=request.POST.get("credits")
+        )
+
+        login(request, user)
+        return redirect("student_dashboard")
+
+    return render(request, "signup.html")
